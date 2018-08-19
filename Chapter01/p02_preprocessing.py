@@ -8,9 +8,12 @@ data = np.array([
     [1, 3.3, -1.9, -4.3]
 ])
 
+print("\nData = ", data)
+
 data_standardized = preprocessing.scale(data)
-print("\nMean = ", data_standardized.mean(axis = 0))
-print("Std deviation = ", data_standardized.std(axis = 0))
+print("\nScale = ", data_standardized)
+print("\nMean = ", data_standardized.mean(axis=0))
+print("Std deviation = ", data_standardized.std(axis=0))
 
 # 1.2.2.02 范围缩放
 data_scaler = preprocessing.MinMaxScaler(feature_range=(0, 1))
@@ -18,11 +21,11 @@ data_scaled = data_scaler.fit_transform(data)
 print("\nMin max scaled data = ", data_scaled)
 
 # 1.2.2.03 归一化
-data_normalized = preprocessing.normalize(data, norm = 'l1')
+data_normalized = preprocessing.normalize(data, norm='l1')
 print("\nL1 normalized data = ", data_normalized)
 
 # 1.2.2.04 二值化
-data_binarized = preprocessing.Binarizer(threshold = 1.4).transform(data)
+data_binarized = preprocessing.Binarizer(threshold=1.4).transform(data)
 print("\nBinarized data = ", data_binarized)
 
 # 1.2.2.05 独热编码
